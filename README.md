@@ -1,10 +1,10 @@
-# AWS Lambda Containers
+# AWS Lambda Containers (Python)
 
-This repository demonstrates how to package and deploy an AWS Lambda function using a custom Docker container. This is specifically designed for systems that require ISSO-approved container images as opposed to AWS provided container images. It provides a template for building serverless Python applications that require custom dependencies or system libraries not available in the standard AWS Lambda runtime.
+This repository demonstrates how to package and deploy an AWS Lambda function using a custom Docker container. This is specifically designed for systems that require ISSO-approved container images as opposed to AWS-provided container images. This repository provides a template for building serverless Python applications that require custom dependencies or system libraries not available in the standard AWS Lambda runtime.
 
 ## Purpose
-- **Custom Lambda Packaging:** Build custom containers to run in AWS Lambda. This repository is configured for **python 3.11** runtimes.
-- **Flexible Base Image:** Easily change the base image in the `Dockerfile` to suit your runtime or OS requirements.
+- **Custom Lambda Packaging:** Build custom containers to run in AWS Lambda. This repository uses an example of building a container from a custom base image (**Python 3.11**) to be deployed in AWS Lambda.
+- **Flexible Base Image:** Change the base image in the `Dockerfile` to suit your runtime or OS requirements.
 - **Reproducible Deployments:** Use Docker to ensure your Lambda environment matches your local development.
 
 ## Folder Structure
