@@ -39,6 +39,34 @@ docker build -t my-lambda-container .
 1. Tag and push your image to Amazon ECR.
 2. Create or update your Lambda function to use the newly created container image.
 
+## Infrastructure for Deployment: `lambda.tf`
+
+This file provides an example of how to define, manage, and deploy a containerized Lambda function in Terraform. Make sure to provision and push the container to an elastic container repository (ECR) in AWS before deploying infrastructure that utilizes the container.
+
+### How to Use `lambda.tf`
+1. **Configure AWS Credentials:** Ensure your AWS credentials are set up locally (via environment variables, AWS CLI, or a credentials file).
+2. **Update Variables:** Edit `lambda.tf` to specify your ECR image URI, Lambda function name, IAM roles, and any other required parameters.
+3. **Initialize Terraform:**
+   ```powershell
+   terraform init
+   ```
+4. **Review the Plan:**
+   ```powershell
+   terraform plan
+   ```
+5. **Apply the Configuration:**
+   ```powershell
+   terraform apply
+   ```
+   This will provision the Lambda function using your container image and any other resources defined in the file.
+
+### Use Cases
+- Automate deployment and updates of your Lambda container.
+- Manage IAM roles, permissions, and environment variables as code.
+- Integrate with other AWS resources (API Gateway, S3, etc.) in a reproducible way.
+
+For more details, see the comments in `lambda.tf` and the [Terraform AWS Lambda documentation](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_function).
+
 ## Use Cases for Containerizing Lambda Functions
 - Using system libraries or binaries not available in standard Lambda runtimes.
 - Packaging large dependencies that exceed Lambda's deployment package size limit.
